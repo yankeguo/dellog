@@ -6,4 +6,4 @@ RUN go build -o /dellog
 
 FROM busybox
 COPY --from=builder /dellog /dellog
-CMD ["/dellog"]
+ENTRYPOINT ["/dellog"]
