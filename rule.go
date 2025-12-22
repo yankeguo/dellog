@@ -29,9 +29,8 @@ func ParseRule(buf []byte) (rules []RuleDoc, err error) {
 		}
 		if len(rule.Match) == 0 {
 			continue
-		} else {
-			rules = append(rules, rule)
 		}
+		rules = append(rules, rule)
 	}
 }
 

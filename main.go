@@ -43,12 +43,16 @@ func main() {
 				case ActionRemove:
 					log.Println("remove:", file)
 					if !optDry {
-						_ = os.Remove(file)
+						if err := os.Remove(file); err != nil {
+							log.Printf("failed to remove %s: %v", file, err)
+						}
 					}
 				case ActionTruncate:
 					log.Println("truncate:", file)
 					if !optDry {
-						_ = os.Truncate(file, 0)
+						if err := os.Truncate(file, 0); err != nil {
+							log.Printf("failed to truncate %s: %v", file, err)
+						}
 					}
 				}
 			}

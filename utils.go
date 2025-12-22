@@ -25,14 +25,14 @@ func (c *Capacity) UnmarshalYAML(unmarshal func(interface{}) error) error {
 		if err := unmarshal(&s); err != nil {
 			return err
 		}
-		if v, err := ParseCapacity(s); err != nil {
+		v, err := ParseCapacity(s)
+		if err != nil {
 			return err
-		} else {
-			*c = v
 		}
-	} else {
-		*c = Capacity(v)
+		*c = v
+		return nil
 	}
+	*c = Capacity(v)
 	return nil
 }
 

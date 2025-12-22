@@ -1,9 +1,9 @@
 module github.com/yankeguo/dellog
 
-go 1.20
+go 1.25
 
 require (
-	github.com/stretchr/testify v1.10.0
+	github.com/stretchr/testify v1.11.1
 	github.com/yankeguo/rg v1.3.1
 	gopkg.in/yaml.v3 v3.0.1
 )
